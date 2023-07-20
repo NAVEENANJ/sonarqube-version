@@ -34,17 +34,17 @@ sudo su - jenkins
 
 Create EKS Cluster with two worker nodes using eksctl
 
-eksctl create cluster --name demo-eks --region ap-south-1 --nodegroup-name my-nodes --node-type t2.micro --managed --nodes 2 
+eksctl create cluster --name demo-eks --region ap-northeast-3 --nodegroup-name my-nodes --node-type t2.micro --managed --nodes 2 
 
-eksctl get cluster --name demo-eks --region ap-south-1
+eksctl get cluster --name demo-eks --region ap-northeast-3
 
-eksctl get cluster --name demo-eks --region ap-south-1
+eksctl get cluster --name demo-eks --region ap-northeast-3
 
 This should confirm that EKS cluster is up and running.
 
 Update Kube config by entering below command:
 
-aws eks update-kubeconfig --name demo-eks --region ap-south-1
+aws eks update-kubeconfig --name demo-eks --region ap-northeast-3
 
 kubeconfig file be updated under /var/lib/jenkins/.kube folder.
 
@@ -60,6 +60,6 @@ kubectl get nodes
 kubectl get ns
 
 Delete EKS Cluster using eksctl
-eksctl delete cluster --name demo-eks --region ap-south-1
+eksctl delete cluster --name demo-eks --region ap-northeast-3
 
 
